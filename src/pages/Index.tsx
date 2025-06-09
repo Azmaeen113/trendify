@@ -166,19 +166,43 @@ const Index = () => {
       name: "Sarah Johnson",
       company: "Tech Startup",
       text: "Trendify transformed our digital presence. Our website traffic increased by 300% in just 3 months!",
-      gradient: "from-emerald-400 to-teal-500"
+      gradient: "from-emerald-400 to-teal-500",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "Michael Chen",
       company: "E-commerce Store",
       text: "The team's expertise in Shopify development helped us launch our store successfully. Highly recommended!",
-      gradient: "from-teal-400 to-slate-500"
+      gradient: "from-teal-400 to-slate-500",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "Emily Rodriguez",
       company: "Content Creator",
       text: "Their YouTube marketing strategy doubled our subscriber count. Professional and results-driven!",
-      gradient: "from-slate-400 to-emerald-500"
+      gradient: "from-slate-400 to-emerald-500",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+    },
+    {
+      name: "David Thompson",
+      company: "Digital Agency",
+      text: "Outstanding work on our brand redesign. The team understood our vision perfectly and delivered beyond expectations.",
+      gradient: "from-emerald-500 to-slate-500",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+    },
+    {
+      name: "Lisa Wang",
+      company: "Fashion Brand",
+      text: "Their social media strategy helped us reach a younger audience. Sales increased by 250% in 6 months!",
+      gradient: "from-teal-500 to-emerald-400",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+    },
+    {
+      name: "James Wilson",
+      company: "Restaurant Chain",
+      text: "The website redesign and SEO optimization brought us 400% more online orders. Incredible results!",
+      gradient: "from-slate-500 to-teal-400",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     }
   ];
 
@@ -526,7 +550,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -540,8 +564,23 @@ const Index = () => {
                   <CardContent className="pt-6 relative z-10">
                     <p className="text-white/90 mb-6 italic text-lg leading-relaxed">"{testimonial.text}"</p>
                     <div className="flex items-center">
-                      <div className={`w-14 h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-4 shadow-lg`}>
-                        <span className="text-white font-bold text-xl">{testimonial.name[0]}</span>
+                      <div className="w-14 h-14 rounded-full mr-4 shadow-lg overflow-hidden border-2 border-white/20">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            // Fallback to gradient circle with initial if image fails to load
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        <div className={`w-full h-full bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center hidden`}>
+                          <span className="text-white font-bold text-xl">{testimonial.name[0]}</span>
+                        </div>
                       </div>
                       <div>
                         <div className="font-semibold text-white text-lg">{testimonial.name}</div>
