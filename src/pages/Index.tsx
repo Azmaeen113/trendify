@@ -167,36 +167,28 @@ const Index = () => {
       company: "Tech Startup",
       text: "Trendify transformed our digital presence. Our website traffic increased by 300% in just 3 months!",
       gradient: "from-emerald-400 to-teal-500",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      mockupImage: "/lovable-uploads/23bfdd6a-b550-42d2-8d9f-a73abe122dc1.png",
-      projectType: "Website Redesign"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "Michael Chen",
       company: "E-commerce Store",
       text: "The team's expertise in Shopify development helped us launch our store successfully. Highly recommended!",
       gradient: "from-teal-400 to-slate-500",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      mockupImage: "/lovable-uploads/557243f6-b538-411c-8f80-effe45265f3e.png",
-      projectType: "E-commerce Platform"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "Emily Rodriguez",
       company: "Content Creator",
       text: "Their YouTube marketing strategy doubled our subscriber count. Professional and results-driven!",
       gradient: "from-slate-400 to-emerald-500",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      mockupImage: "/lovable-uploads/dc38df3c-9024-44c8-998e-070a81d59a1d.png",
-      projectType: "YouTube Channel"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "David Thompson",
       company: "Digital Agency",
       text: "Outstanding work on our brand redesign. The team understood our vision perfectly and delivered beyond expectations.",
       gradient: "from-emerald-500 to-slate-500",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-      mockupImage: "/lovable-uploads/e6127017-fdd4-4b83-8559-97021d25ca53.png",
-      projectType: "Brand Identity"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "Lisa Wang",
@@ -570,23 +562,6 @@ const Index = () => {
                 <Card className="bg-white/10 backdrop-blur-xl p-8 border border-white/20 shadow-2xl rounded-3xl hover-lift group overflow-hidden relative">
                   <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
                   <CardContent className="pt-6 relative z-10">
-                    {/* Project Mockup Image - Only show if mockupImage exists */}
-                    {testimonial.mockupImage && (
-                      <div className="mb-6">
-                        <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white/20">
-                          <img
-                            src={testimonial.mockupImage}
-                            alt={`${testimonial.projectType} for ${testimonial.name}`}
-                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
-                          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700">
-                            {testimonial.projectType}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
                     <p className="text-white/90 mb-6 italic text-lg leading-relaxed">"{testimonial.text}"</p>
                     <div className="flex items-center">
                       <div className="w-14 h-14 rounded-full mr-4 shadow-lg overflow-hidden border-2 border-white/20">
