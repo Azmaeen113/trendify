@@ -181,7 +181,7 @@ const Index = () => {
       company: "Content Creator",
       text: "Their YouTube marketing strategy doubled our subscriber count. Professional and results-driven!",
       gradient: "from-slate-400 to-emerald-500",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
     },
     {
       name: "David Thompson",
@@ -578,7 +578,7 @@ const Index = () => {
                             if (fallback) fallback.style.display = 'flex';
                           }}
                         />
-                        <div className={`w-full h-full bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center hidden`}>
+                        <div className={`w-full h-full bg-gradient-to-br ${testimonial.gradient} rounded-full items-center justify-center hidden`}>
                           <span className="text-white font-bold text-xl">{testimonial.name[0]}</span>
                         </div>
                       </div>
@@ -1072,12 +1072,7 @@ const Index = () => {
                   {/* Front of the card */}
                   <div className="relative bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500">
                     <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl"
-                         style={{
-                           backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
-                           '--tw-gradient-from': '#10B981',
-                           '--tw-gradient-to': '#0EA5E9'
-                         }}></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-blue-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl"></div>
                     <div className="relative">
                       <div className="relative mb-6 rounded-2xl overflow-hidden aspect-[4/5] group-hover:scale-[1.02] transition-transform duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-black/30 z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
@@ -1145,8 +1140,6 @@ const Index = () => {
               }}
               navigation={true}
               speed={600}
-              lazy={true}
-              preloadImages={false}
             >
               {[
                 {
